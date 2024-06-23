@@ -45,7 +45,9 @@
                                 <div class="dropdown">
                                     <button class="btn btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                             aria-expanded="false">
-                                        Аккаунт
+                                        {% if current_user.is_anonymous %}Аккаунт
+                                        {% else %}{{ current_user.username }}
+                                        {% endif %}
                                     </button>
                                     <ul class="dropdown-menu">
                                         {% if current_user.is_anonymous %}
