@@ -48,8 +48,13 @@
                                         Аккаунт
                                     </button>
                                     <ul class="dropdown-menu">
+                                        {% if current_user.is_anonymous %}
                                         <li><a class="dropdown-item" href="{{ url_for('login') }}">Войти</a></li>
-                                        <li><a class="dropdown-item" href="#">Выйти</a></li>
+                                        <li><a class="dropdown-item"
+                                               href="{{ url_for('register') }}">Зарегистрироваться</a></li>
+                                        {% else %}
+                                        <li><a class="dropdown-item" href="{{ url_for('logout') }}">Выйти</a></li>
+                                        {% endif %}
                                     </ul>
                                 </div>
                             </div>
