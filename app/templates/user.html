@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Клиент: {{ user.username }}</h1>
+    <hr>
+    {% for order in orders %}
+    <table class="table table-success table-striped">
+        <tr valign="top">
+            <td><b> Номер заказа: </b> {{ order.order_id }}</td>
+            <td><b> Дата: </b> {{ order.date }}</td>
+            <td><b> Итого: </b> {{ order.price_total }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+</div>
+
+{% endblock %}

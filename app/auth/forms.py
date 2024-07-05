@@ -11,7 +11,7 @@ class LoginForm(FlaskForm):
                            validators=[DataRequired('Это поле нужно заполнить!')])
     password = PasswordField('Пароль',
                              validators=[DataRequired('Это поле нужно заполнить!')])
-    remember_me = BooleanField('Запомнить')
+    remember_me = BooleanField('Запомнить', default=True)
     submit = SubmitField('Войти')
 
 
